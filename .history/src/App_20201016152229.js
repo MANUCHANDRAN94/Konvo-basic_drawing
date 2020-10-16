@@ -9,6 +9,8 @@ const App = () => {
     width: 100,
     height: 100,
     stroke: 'black',
+
+
   });
   const [cirlce, setCircle] = React.useState({
     x: 300,

@@ -9,20 +9,52 @@ const App = () => {
     width: 100,
     height: 100,
     stroke: 'black',
+
+
   });
   const [cirlce, setCircle] = React.useState({
-    x: 300,
+    x: 200,
     y: 100,
     radius: 50,
     stroke: 'green'
   });
 
   const handleDragStart = (e) => {
-    console.log(e.target)
+    const id = e.target;
+    console.log(id)
+    let rectng = id === 'rect' ? true : false
+    if (rectng) {
+      setRectangle(
+        {
+          ...rectangle,
+          isDragging: true
+        })
+    } else {
+      setCircle(
+        {
+          ...cirlce,
+          isDragging: true
+        })
+    }
+
   };
   const handleDragEnd = (e) => {
-    console.log(e.target)
-
+    const id = e.target;
+    console.log(id)
+    let rectng = id === 'rect' ? true : false
+    if (rectng) {
+      setRectangle(
+        {
+          ...rectangle,
+          isDragging: false
+        })
+    } else {
+      setCircle(
+        {
+          ...cirlce,
+          isDragging: false
+        })
+    }
   };
   return (
     <Stage width={window.innerWidth} height={window.innerHeight} >
@@ -34,14 +66,13 @@ const App = () => {
           height={rectangle.height}
           stroke={rectangle.stroke}
           draggable
-          isDragging={false}
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
         />
-        <Circle x={cirlce.x} y={cirlce.y} radius={cirlce.radius} stroke={cirlce.stroke} draggable isDragging={false}
+        <Circle x={cirlce.x} y={cirlce.y} radius={cirlce.radius} stroke={cirlce.stroke} draggable
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd} />
-        <Text text="Konvo try" fontSize={25} fill='red' textDecoration='underline' padding='20' />
+        <Text text="Konvo try" fontSize={25} fill='red' textDecoration='underline' padding='200' />
 
       </Layer>
     </Stage>

@@ -9,6 +9,8 @@ const App = () => {
     width: 100,
     height: 100,
     stroke: 'black',
+
+
   });
   const [cirlce, setCircle] = React.useState({
     x: 300,
@@ -18,11 +20,41 @@ const App = () => {
   });
 
   const handleDragStart = (e) => {
-    console.log(e.target)
+    const id = e.target;
+    console.log(id)
+    let rectng = id === 'rect' ? true : false
+    if (rectng) {
+      setRectangle(
+        {
+          ...rectangle,
+          isDragging: true
+        })
+    } else {
+      setCircle(
+        {
+          ...cirlce,
+          isDragging: true
+        })
+    }
+
   };
   const handleDragEnd = (e) => {
-    console.log(e.target)
-
+    const id = e.target;
+    console.log(id)
+    // let rectng = id === 'rect' ? true : false
+    if (rectng) {
+      setRectangle(
+        {
+          ...rectangle,
+          isDragging: false
+        })
+    } else {
+      setCircle(
+        {
+          ...cirlce,
+          isDragging: false
+        })
+    }
   };
   return (
     <Stage width={window.innerWidth} height={window.innerHeight} >
