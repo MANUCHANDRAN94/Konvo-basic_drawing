@@ -3,44 +3,83 @@ import { Stage, Layer, Rect, Text, Circle } from 'react-konva';
 
 const App = () => {
 
-  const [rectangle, setRectangle] = React.useState({
-    x: 100,
-    y: 50,
-    width: 100,
-    height: 100,
-    stroke: 'black',
-  });
-  const [cirlce, setCircle] = React.useState({
-    x: 300,
-    y: 100,
-    radius: 50,
-    stroke: 'green'
+  const [shape, setShape] = React.useState({
+    rect: {
+      name: 'rect',
+      x: 100,
+      y: 50,
+      width: 100,
+      height: 100,
+      stroke: 'black',
+      dragging: false,
+      zIdx: 0
+    },
+    circ: {
+      name: 'circ',
+      x: 300,
+      y: 100,
+      radius: 50,
+      stroke: 'green',
+      dragging: false,
+      zIdx: 0
+    }
   });
 
   const handleDragStart = (e) => {
-    console.log(e.target)
+    let shapeName = e.target.name()
+    setShape((prev) => {
+      return {
+        ...prev,
+        [shapeName]: {
+          ...prev[shapeName],
+          dragging: true,
+          zIdx: (prev[shapeName].zIdx + 1)
+        }
+      }
+    })
   };
   const handleDragEnd = (e) => {
-    console.log(e.target)
-
-  };
+    let shapeName = e.target.name()
+    setShape((prev) => {
+      return {
+        ...prev,
+        [shapeName]: {
+          ...prev[shapeName],
+          dragging: false
+        }
+      }
+    })
+  }
   return (
     <Stage width={window.innerWidth} height={window.innerHeight} >
       <Layer>
+        {/* console.log({shape.circ.dragging}) */}
         <Rect
-          x={rectangle.x}
-          y={rectangle.y}
-          width={rectangle.width}
-          height={rectangle.height}
-          stroke={rectangle.stroke}
+          name={shape.rect.name}
+          x={shape.rect.x}
+          y={shape.rect.y}
+          width={shape.rect.width}
+          height={shape.rect.height}
+          stroke={shape.rect.stroke}
+          isDragging={shape.rect.dragging}
           draggable
-          isDragging={false}
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
+          fill={shape.rect.dragging ? 'red' : null}
+          zIndex={shape.rect.zIdx}
         />
-        <Circle x={cirlce.x} y={cirlce.y} radius={cirlce.radius} stroke={cirlce.stroke} draggable isDragging={false}
+        <Circle x={shape.circ.x}
+          name={shape.circ.name}
+          y={shape.circ.y}
+          radius={shape.circ.radius}
+          stroke={shape.circ.stroke}
+          isDragging={shape.circ.dragging}
+          draggable
           onDragStart={handleDragStart}
-          onDragEnd={handleDragEnd} />
+          onDragEnd={handleDragEnd}
+          fill={shape.circ.dragging ? 'yellow' : null}
+          zIndex={shape.circ.zIdx}
+        />
         <Text text="Konvo try" fontSize={25} fill='red' textDecoration='underline' padding='20' />
 
       </Layer>
