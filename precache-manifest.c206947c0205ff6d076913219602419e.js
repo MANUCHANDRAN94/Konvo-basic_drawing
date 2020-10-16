@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0c446929bb4df57a82e00642a4dc8d07",
+    "revision": "252276b987227d9e6e6dc34d985dda1e",
     "url": "/Konvo-basic_drawing/index.html"
   },
   {
