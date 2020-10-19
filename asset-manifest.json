@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Konvo-basic_drawing/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/Konvo-basic_drawing/static/js/main.f2c88e2d.chunk.js",
-    "main.js.map": "/Konvo-basic_drawing/static/js/main.f2c88e2d.chunk.js.map",
+    "main.js": "/Konvo-basic_drawing/static/js/main.728bf01c.chunk.js",
+    "main.js.map": "/Konvo-basic_drawing/static/js/main.728bf01c.chunk.js.map",
     "runtime-main.js": "/Konvo-basic_drawing/static/js/runtime-main.b0d2d398.js",
     "runtime-main.js.map": "/Konvo-basic_drawing/static/js/runtime-main.b0d2d398.js.map",
-    "static/js/2.11763297.chunk.js": "/Konvo-basic_drawing/static/js/2.11763297.chunk.js",
-    "static/js/2.11763297.chunk.js.map": "/Konvo-basic_drawing/static/js/2.11763297.chunk.js.map",
+    "static/js/2.7f07a154.chunk.js": "/Konvo-basic_drawing/static/js/2.7f07a154.chunk.js",
+    "static/js/2.7f07a154.chunk.js.map": "/Konvo-basic_drawing/static/js/2.7f07a154.chunk.js.map",
     "index.html": "/Konvo-basic_drawing/index.html",
-    "precache-manifest.c206947c0205ff6d076913219602419e.js": "/Konvo-basic_drawing/precache-manifest.c206947c0205ff6d076913219602419e.js",
+    "precache-manifest.95c2814036567fbca5574608f5ccb859.js": "/Konvo-basic_drawing/precache-manifest.95c2814036567fbca5574608f5ccb859.js",
     "service-worker.js": "/Konvo-basic_drawing/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/Konvo-basic_drawing/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.11763297.chunk.js.LICENSE.txt": "/Konvo-basic_drawing/static/js/2.11763297.chunk.js.LICENSE.txt"
+    "static/js/2.7f07a154.chunk.js.LICENSE.txt": "/Konvo-basic_drawing/static/js/2.7f07a154.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b0d2d398.js",
-    "static/js/2.11763297.chunk.js",
+    "static/js/2.7f07a154.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.f2c88e2d.chunk.js"
+    "static/js/main.728bf01c.chunk.js"
   ]
 }
